@@ -39,7 +39,7 @@ app.get('/api/users', async (req, res) => {
     const users = await User.find();
     res.json(users);
   } catch (error) {
-    res.status(500).json({ message: 'Error fetching users', error });
+    res.status(400).json({ message: 'Error creating user', error: error.message });
   }
 });
 
